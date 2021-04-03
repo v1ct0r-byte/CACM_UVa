@@ -1,0 +1,16 @@
+//private static Euclid result2 = new Euclid();
+
+//result2 = Euclid.euclid(b, a);
+
+//Now we must take the one wich fullfils the conditions
+//long sum1 = Math.abs(result1.x) + Math.abs(result1.y);
+//long sum2 = Math.abs(result2.x) + Math.abs(result2.y);
+//if(result1.x <= result1.y){
+//    System.out.println(result1.x + " " + result1.y + " " + result1.d);
+//}else if(result2.x <= result2.y){
+//    System.out.println(result2.x + " " + result2.y + " " + result2.d);
+//}else if(Math.min(sum1, sum2) == sum1){
+//    System.out.println(result1.x + " " + result1.y + " " + result1.d);
+//}else if(Math.min(sum1, sum2) == sum2){
+//    System.out.println(result2.x + " " + result2.y + " " + result2.d);
+//}
