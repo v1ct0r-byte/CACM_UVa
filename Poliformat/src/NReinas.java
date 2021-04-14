@@ -1,5 +1,5 @@
 
-package es.upv.etsinf.backtraking;
+//package es.upv.etsinf.backtraking;
 
 class NReinas
 {
