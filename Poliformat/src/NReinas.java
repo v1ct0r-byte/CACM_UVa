@@ -1,5 +1,5 @@
-
 //package es.upv.etsinf.backtraking;
+
 class NReinas
 {
 	private boolean	finalizado; // No se utiliza en este caso porque debemos contar todas las soluciones posibles y no parar en la primera que encontremos
