@@ -1,4 +1,4 @@
-package Marbles;
+//package Marbles;
 import java.util.*;
 
 public class Main {
@@ -16,27 +16,55 @@ public class Main {
             long c2 = scanner.nextLong();
             long n2 = scanner.nextLong();
 
-            Euclid gcdEuclid = euclid(c1, c2);
+            Euclid gcdEuclid = Euclid.euclid(c1, c2);
             long d = gcdEuclid.d;
+            long x = gcdEuclid.x;
+            long y = gcdEuclid.y;
+            long m1, m2 = 0;
+
             //Strategy
-            
-            /*
-            long m1 = 0, m2 = 0;
-            while(n1 * x + n2 * y < N){
-                
+            if(n % d != 0){
+                System.out.println("failed");
+            }else{
+                m1 = (long) Math.ceil(-n * x/(double)n2);
+                m2 = (long) Math.floor(n * y/(double)n1);
+                if(m1 > m2){
+                    System.out.println("failed");
+                }
+                if(c1*n2 <= c2*n1){
+                    x = n2/d * m2 + n/d * x;
+                    y = n/d * y - n1/d * m2;
+                }else{
+                    x = n2/d * m1 + n/d * x;
+                    y = n/d * y - n1/d * m1;
+                }
+                System.out.println(x + " " + y);
             }
-            if(c1*x < c2 * y){
+
+            //System.out.println("d = " + d + " x = " + x + " y = " + y);
+            //Conditions
+            //c1*x + c2*y = d;
+            //n1*x + n2*y != n;
+            /*while(n1*x + n2*y != n){
+
+            }
+            
+            if(c1*n2 < c2*n1){
                 //Maximize y
-                while((c1 * x + c2 * y) == k * gcdCC){
-                    y++;
+                long k = y/d;
+                while(c1*x+c2*y == k*d){
+
                 }
             }else{
                 //Maximize x
-                while((c1 * x + c2 * y) == k * gcdCC){
-                    x++;
+                long k = x/d;
+                while(c1*x+c2*y == k*d){
+                    //warranty
+                    if(((n - (n1*x)) % n2) == 0){
+                        y = (n - (n1 * x))/n2;
+                    }
                 }
-            }
-            */
+            } */
 
             scanner.nextLine();
         }
