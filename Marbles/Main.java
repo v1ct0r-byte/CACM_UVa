@@ -20,43 +20,22 @@ public class Main {
             long d = gcdEuclid.d;
             long x = gcdEuclid.x;
             long y = gcdEuclid.y;
-            long m1, m2 = 0;
+            long m1 = 0, m2 = 0;
+            //System.out.println("d = " + d + " x = " + x + " y = " + y);
 
             //Strategy
-            if(n % d != 0){
-                System.out.println("failed");
-            }else{
-                m1 = (long) Math.ceil(-n * x/(double)n2);
-                m2 = (long) Math.floor(n * y/(double)n1);
-                if(m1 > m2){
-                    System.out.println("failed");
-                }
-                if(c1*n2 <= c2*n1){
-                    x = n2/d * m2 + n/d * x;
-                    y = n/d * y - n1/d * m2;
-                }else{
-                    x = n2/d * m1 + n/d * x;
-                    y = n/d * y - n1/d * m1;
-                }
-                System.out.println(x + " " + y);
-            }
-
-            //System.out.println("d = " + d + " x = " + x + " y = " + y);
             //Conditions
             //c1*x + c2*y = d;
             //n1*x + n2*y != n;
-            /*while(n1*x + n2*y != n){
+            //while(n1*x + n2*y != n){
 
-            }
+            //}
             
             if(c1*n2 < c2*n1){
-                //Maximize y
-                long k = y/d;
-                while(c1*x+c2*y == k*d){
-
-                }
-            }else{
                 //Maximize x
+                long k = n / n3;
+            }else{
+                //Maximize y
                 long k = x/d;
                 while(c1*x+c2*y == k*d){
                     //warranty
@@ -64,8 +43,25 @@ public class Main {
                         y = (n - (n1 * x))/n2;
                     }
                 }
-            } */
+            }
 
+            /*if(c1*n2 < c2*n1){
+                //Maximize x
+                long k = y/d;
+                while(c1*x+c2*y == k*d){
+
+                }
+            }else{
+                //Maximize y
+                long k = x/d;
+                while(c1*x+c2*y == k*d){
+                    //warranty
+                    if(((n - (n1*x)) % n2) == 0){
+                        y = (n - (n1 * x))/n2;
+                    }
+                }
+            }
+            */
             scanner.nextLine();
         }
     }
