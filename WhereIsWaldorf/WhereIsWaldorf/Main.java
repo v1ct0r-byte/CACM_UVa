@@ -44,7 +44,10 @@ public class Main {
                     //columns
                     for(int q = 0; q < m && !found; q++){
                         if(table[j][q].compareTo(word[0]) == 0){
-                            if(contains(table, word, j, q, n, m)){
+                            if(word.length == 1){
+                                System.out.println((j+1) + " " + (q+1));
+                                found = true;
+                            }else if(contains(table, word, j, q, n, m)){
                                 System.out.println((j+1) + " " + (q+1));
                                 found = true;
                             }
@@ -55,8 +58,8 @@ public class Main {
 
             if(cases > 1){
                 System.out.println();
+                scanner.nextLine();
             }
-            scanner.nextLine();
             cases--;
         }
 
@@ -81,23 +84,18 @@ public class Main {
     public static boolean checkDirection(int directionX, int directionY, String[][] table, String[] word, int j, int q, int n, int m, int len){
         //current length
         int cLen = 1;
-        //check if mathces
+        //check if matches
         boolean end = false;
-        //for(int px = j + directionX; px > 0 && px < n && !end; px = px + directionX){
-        for(int px = j + directionX, py = q + directionY;px > 0 && px < n && py > 0 && py < m && !end; py = py + directionY, px = px + directionX){
-            if(table[px][py].compareTo(word[cLen]) == 0){
+        for(int py = j + directionY, px = q + directionX; px >= 0 && px < m && py >= 0 && py < n && !end;  px = px + directionX, py = py + directionY){
+            if(table[py][px].compareTo(word[cLen]) == 0){
                 cLen++;
-                if(cLen == word.length){
+                if(cLen == len){
                     return true;
                 }
             }else{
                 end = true;
             }
         }
-        //}
-            //table bounds passed
-            //if(j >= n || j < 0 || k >= m || k < 0){return false;}
-        
         return false;
     }
 }

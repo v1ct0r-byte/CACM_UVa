@@ -1,0 +1,16 @@
+1
+
+3 3
+abc
+dzf
+ghi
+9
+za
+zb
+zc
+zd
+z
+zf
+zg
+zh
+zi
